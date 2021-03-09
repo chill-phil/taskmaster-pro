@@ -14,7 +14,6 @@ var createTask = function(taskText, taskDate, taskList) {
   // append span and p element to parent li
   taskLi.append(taskSpan, taskP);
 
-
   // append to ul list on the page
   $("#list-" + taskList).append(taskLi);
 };
@@ -39,6 +38,8 @@ var loadTasks = function() {
 
   // loop over object properties
   $.each(tasks, function(list, arr) {
+    console.log(list, arr);
+    // then loop over sub array
     arr.forEach(function(task) {
       createTask(task.text, task.date, list);
     });
